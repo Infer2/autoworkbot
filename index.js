@@ -28,9 +28,9 @@ client.on("ready", async () => {
   sendSlashCommand(config.channelID, "490707751832649738", "overtime", 2400);
   
   // Set timers for each command
-  let workTimer = 607e3;
-  let tipsTimer = 307e3;
-  let overtimeTimer = 1807e3;
+  let workTimer = 607000;
+  let tipsTimer = 307000;
+  let overtimeTimer = 1807000;
   
   // Function to send slash command and reset its timer
   const sendAndResetTimer = (command, timer) => {
