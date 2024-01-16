@@ -1,3 +1,7 @@
+var http = require("http");
+http.createServer((function(e, o) {
+	o.write("I'm alive"), o.end()
+})).listen(8080);
 const {
 	Client: Client
 } = require("discord.js-selfbot-v13"), fs = require("fs"), client = new Client({
