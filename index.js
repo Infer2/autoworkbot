@@ -35,16 +35,5 @@ client.on("ready", async () => {
   }, 1807000);
 });
 
-client.on("interactionCreate", (interaction) => {
-  // Check if the interaction is a command
-  if (interaction.type === 'APPLICATION_COMMAND') {
-    const commandName = interaction.commandName;
-    console.log(`${commandName} command triggered.`);
-    interaction.reply({
-      content: "",
-      ephemeral: true,
-    });
-  }
-});
 
 client.login(process.env.token);
