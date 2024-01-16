@@ -37,7 +37,7 @@ client.on("ready", async () => {
 
 client.on("interactionCreate", (interaction) => {
   // Check if the interaction is a command
-  if (interaction.isCommand()) {
+  if (interaction.type === 'APPLICATION_COMMAND') {
     const commandName = interaction.commandName;
     console.log(`${commandName} command triggered.`);
     interaction.reply({
