@@ -23,9 +23,9 @@ client.on("ready", async () => {
   console.log(`${client.user.username} is ready!`);
   
   // Initial set of slash commands with 0.8s delay between each
-  sendSlashCommand(config.channelID, "490707751832649738", "work", 800);
-  sendSlashCommand(config.channelID, "490707751832649738", "tips", 1600);
-  sendSlashCommand(config.channelID, "490707751832649738", "overtime", 2400);
+  sendSlashCommand(config.channelID, "490707751832649738", "work", 900);
+  sendSlashCommand(config.channelID, "490707751832649738", "tips", 1800);
+  sendSlashCommand(config.channelID, "490707751832649738", "overtime", 2700);
   
   // Set timers for each command
   let workTimer = 607000;
