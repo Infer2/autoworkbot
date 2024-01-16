@@ -26,10 +26,10 @@ client.on("ready", async () => {
   }, 2000);
   setInterval(() => {
     sendSlashCommand(config.channelID, "490707751832649738", "work");
-  }, 547000);
+  }, 607000);
   setInterval(() => {
     sendSlashCommand(config.channelID, "490707751832649738", "tips");
-  }, 247000);
+  }, 307000);
   setInterval(() => {
     sendSlashCommand(config.channelID, "490707751832649738", "overtime");
   }, 1807000);
