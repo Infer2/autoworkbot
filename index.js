@@ -6,15 +6,16 @@ const { Client } = require('discord.js-selfbot-v13');
 const optionsPath = path.join(__dirname, 'node_modules', 'discord.js-selfbot-v13', 'src', 'util', 'Options.js');
 
 try {
-    // Read the content of Options.js
-    let optionsContent = fs.readFileSync(optionsPath, 'utf8');
+    // Require the Options.js file
+    const options = require(optionsPath);
 
     // Modify the "browser" value
-    optionsContent = optionsContent.replace(/browser: 'Discord Client',/, "browser: 'Discord iOS',");
+    options.browser = 'Discord iOS';
 
-    // Evaluate the modified content to apply changes at runtime
-    eval(optionsContent);
+    // Write the modified options back to the file
+    fs.writeFileSync(optionsPath, `module.exports = ${JSON.stringify(options, null, 2)};`);
 
+    console.log("Options.js modified successfully");
 } catch (error) {
     console.error("Error modifying Options.js:", error);
 }
