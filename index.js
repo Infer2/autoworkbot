@@ -30,9 +30,9 @@ client.on("ready", async () => {
   
   // Function to send slash command and reset its timer
   const sendAndResetTimer = (command, timer) => {
-    sendSlashCommand(config.channelID, "490707751832649738", command, 0);
+    sendSlashCommand(process.env.channel, "490707751832649738", command, 0);
     setInterval(() => {
-      sendSlashCommand(config.channelID, "490707751832649738", command, 0);
+      sendSlashCommand(process.env.channel, "490707751832649738", command, 0);
     }, timer);
   };
   
