@@ -18,11 +18,6 @@ const sendSlashCommand = (channelId, command, text, delay) => {
 client.on("ready", async () => {
   console.log(`${client.user.username} is ready!`);
   
-  // Initial set of slash commands with 0.8s delay between each
-  sendSlashCommand(process.env.channel, "490707751832649738", "work", 900);
-  sendSlashCommand(process.env.channel, "490707751832649738", "tips", 1800);
- // sendSlashCommand(process.env.channel, "490707751832649738", "overtime", 2700);
-  
   // Set timers for each command
   let workTimer = 547000;
   let tipsTimer = 247000;
@@ -39,7 +34,7 @@ client.on("ready", async () => {
   // Start timers for each command
   sendAndResetTimer("work", workTimer);
   sendAndResetTimer("tips", tipsTimer);
-//  sendAndResetTimer("overtime", overtimeTimer);
+  sendAndResetTimer("overtime", overtimeTimer);
 });
 
 client.login(process.env.token);
