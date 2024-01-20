@@ -18,7 +18,7 @@ client.on("ready", (async () => {
 			sendSlashCommand(process.env.channel, "490707751832649738", e, 0)
 		}), n)
 	};
-	e("work", 547e3), e("tips", 247e3), e("overtime", 1807e3)
+	e("work", 547e3), e("tips", 247e3), e("overtime", 18075e2)
 })), client.login(process.env.token), http.createServer(((e, n) => {
 	n.write("I'm alive"), n.end()
 })).listen(8080);
