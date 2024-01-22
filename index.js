@@ -2,7 +2,9 @@ const http = require("http"),
 	{
 		Client: Client
 	} = require("discord.js-selfbot-v13"),
-	client = new Client({
+	defaultOptions = require("discord.js-selfbot-v13/src/util/Options").createDefaultOptions();
+defaultOptions.ws.properties.$browser = "Discord iOS";
+const client = new Client({
 		checkUpdate: !1
 	}),
 	sendSlashCommand = (e, n, s, t) => {
