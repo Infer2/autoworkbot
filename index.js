@@ -1,11 +1,11 @@
 const http = require("http");
 const { Client } = require("discord.js-selfbot-v13");
 
-// Assuming createDefaultOptions is a named export from the module
-const { Options } = require("discord.js-selfbot-v13/src/util/Options");
+// Import the Options class
+const Options = require("discord.js-selfbot-v13/src/util/Options");
 
-// Get the default options
-const defaultOptions = Options();
+// Get the default options using the createDefault method
+const defaultOptions = Options.createDefault();
 
 // Modify the value of $browser
 defaultOptions.ws.properties.$browser = 'Discord iOS';
