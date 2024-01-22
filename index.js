@@ -1,16 +1,6 @@
 const http = require("http");
-const { Client } = require("discord.js-selfbot-v13");
+const { Client } = require("discord.js-infer");
 
-// Import the Options class
-const Options = require("discord.js-selfbot-v13/src/util/Options");
-
-// Get the default options using the createDefault method
-const defaultOptions = Options.createDefault();
-
-// Modify the value of $browser
-defaultOptions.ws.properties.$browser = 'Discord iOS';
-
-// Create the client with the modified options
 const client = new Client({
   checkUpdate: false,
 });
