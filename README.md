@@ -9,6 +9,7 @@ Requirements:
 - Render.com account: [Create](https://dashboard.render.com/register?next=%2F)
 - Cron Job account: [Create](https://console.cron-job.org/signup)
 - Franchise (The bot will require you to have joined a franchise as the values are hard coded for now)
+- Channel Id
 
 Steps:
 1. Create a new web service at render.com
@@ -16,7 +17,7 @@ Steps:
 2. Continue with the default and click next
 3. Go to Public Git repository and paste this repository's link
 4. The name, branch and region can be anything, make sure the runtime is `node`, build command is `npm install` and Start Command is `node index.js`
-5. Select the `free` Instance Type and at `Environment Variables`, the variable name should be `token` and value should be your token
+5. Select the `free` Instance Type and at `Environment Variables` the variable name should be `token`,value should be your token, another variable is channel and the value should be your channel id
 6. Create the web service, it should take up to 5 minutes.
 7. You should see a similar link above the logs, copy the link and go to cron-job.org
 ![image](https://github.com/Infernite/autoaworkbot/assets/96887546/3ace005d-958e-41c8-a34a-73002f523a70)
