@@ -28,7 +28,7 @@ client.on("ready", async () => {
 
   sendRepeatedCommands("work", 548e3);
   sendRepeatedCommands("tips", 248e3);
-//  sendRepeatedCommands("overtime", 1808e3);
+  sendRepeatedCommands("overtime", 1808e3);
 });
 
 client.login(process.env.token);
