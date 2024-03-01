@@ -1,7 +1,5 @@
 # AWB | Autoworkbot
 **The bot will send `/work`, `/tips` and `/overtime` every so minute. 
-Since they decided to ban me, I've decided to release this to the public.
-Please don't waste your life on a discord bot.
 This bot can be used with both mobile and windows.**
 ## ❓ Usage (Windows)
 Requirements:
