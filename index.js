@@ -11,7 +11,7 @@ async function sendTips(e) { let n = client.channels.cache.get(e);
                 .cache.get(e);
         n && await n.sendSlash(process.env.botId, "work") } async function sendFranchise(e) { let n =
                 client.channels.cache.get(e);
-        n && await n.sendSlash(process.env.botId, "franchise") }
+        n && await n.sendSlash(process.env.botId, "overtime") }
 
 function sleep(e) { return new Promise(n => setTimeout(n, e)) } async function sendBoost(e) { let n = client.channels
                 .cache.get(e);
