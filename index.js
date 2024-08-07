@@ -1,24 +1,41 @@
-const http = require("http"),
+const express = require("express"),
+	app = express(),
+	port = process.env.PORT || 8080,
 	{
-		Client: Client
-	} = require("discord.js-infer"),
-	client = new Client({
-		checkUpdate: !1
-	}),
-	sendSlashCommand = (e, n, s, t) => {
-		const o = client.channels.cache.get(e);
-		o ? setTimeout((() => {
-			o.sendSlash(n, s).catch((e => console.error(`Error sending slash command: ${e}`)))
-		}), t) : console.error(`Channel with ID ${e} not found.`)
-	};
-client.on("ready", (async () => {
-	console.log(`${client.user.username} is ready!`);
-	const e = (e, n) => {
-		sendSlashCommand(process.env.channel, "490707751832649738", e, 0), setInterval((() => {
-			sendSlashCommand(process.env.channel, "490707751832649738", e, 0)
-		}), n)
-	};
-	e("work", 607e3), e("tips", 307e3), e("overtime", 1807e3)
-})), client.login(process.env.token), http.createServer(((e, n) => {
-	n.write("I'm alive"), n.end()
-})).listen(8080);
+		Client: e
+	} = require("discord.js-infer");
+app.get("/interaction", (e, n) => {
+	n.status(404).send("uwu")
+}), app.post("/interaction", (e, n) => {
+	1 !== e.body.type && n.status(200).end()
+}), app.listen(port, () => {});
+const client = new e;
+let intervalId;
+async function sendTips(e) {
+	let n = client.channels.cache.get(e);
+	n && await n.sendSlash(process.env.botId, "tips")
+}
+async function sendWork(e) {
+	let n = client.channels.cache.get(e);
+	n && await n.sendSlash(process.env.botId, "work")
+}
+async function sendFranchise(e) {
+	let n = client.channels.cache.get(e);
+	n && await n.sendSlash(process.env.botId, "franchise")
+}
+
+function sleep(e) {
+	return new Promise(n => setTimeout(n, e))
+}
+async function sendBoost(e) {
+	let n = client.channels.cache.get(e);
+	n && await n.sendSlash(process.env.botId, "buy", "boosts all")
+}
+client.once("ready", async () => {
+	console.log("Bot is ready!");
+	let e = 0,
+		n = async () => {
+			++e % 82 == 0 && (clearInterval(intervalId), await sleep(72e5), e = 0, intervalId = setInterval(n, process.env.intervalValue)), await sendTips(process.env.channelId), [2, 4, 6, 8, 10, 12].includes(e % 18) && await sendWork(process.env.channelId), e % 6 == 0 && e < 81 && process.env.franchiseEnabled && await sendFranchise(process.env.channelId), 48 === e && await sendBoost(process.env.channelId)
+		};
+	intervalId = setInterval(n, process.env.intervalValue)
+}), client.login(process.env.token);
