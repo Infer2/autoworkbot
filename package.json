@@ -1,6 +1,7 @@
 {
     "dependencies": {
-      "discord.js-infer": "^3.1.4"
+      "discord.js-infer": "^3.1.4",
+      "express": "^4.19.2"
     }
   }
   
